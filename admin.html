@@ -41,34 +41,31 @@
 
     <div id="painelAdmin" class="container" style="display:none;">
 
-        <h1>Painel Administrativo</h1>
+        <div class="header-bar">
+            <h1>Painel Administrativo</h1>
+            <button class="btn-sair" onclick="logout()">Sair</button>
+        </div>
 
-        <button onclick="logout()">Sair</button>
-
-        <hr>
-
-        <div class="dashboard">
-            <div class="card active" onclick="filtrarPorStatus('Todos', this)">
-                <h3>Total</h3>
-                <p id="totalChamados">0</p>
+        <div class="stats-row">
+            <div class="stat-item stat-total active" onclick="filtrarPorStatus('Todos', this)">
+                <div class="stat-numero" id="totalChamados">0</div>
+                <div class="stat-rotulo">Total</div>
             </div>
-            <div class="card aberto" onclick="filtrarPorStatus('Aberto', this)">
-                <h3>Abertos</h3>
-                <p id="abertos">0</p>
+            <div class="stat-item stat-aberto" onclick="filtrarPorStatus('Aberto', this)">
+                <div class="stat-numero" id="abertos">0</div>
+                <div class="stat-rotulo">Abertos</div>
             </div>
-            <div class="card andamento" onclick="filtrarPorStatus('Em andamento', this)">
-                <h3>Em andamento</h3>
-                <p id="andamento">0</p>
+            <div class="stat-item stat-andamento" onclick="filtrarPorStatus('Em andamento', this)">
+                <div class="stat-numero" id="andamento">0</div>
+                <div class="stat-rotulo">Em andamento</div>
             </div>
-            <div class="card resolvido" onclick="filtrarPorStatus('Resolvido', this)">
-                <h3>Resolvidos</h3>
-                <p id="resolvidos">0</p>
+            <div class="stat-item stat-resolvido" onclick="filtrarPorStatus('Resolvido', this)">
+                <div class="stat-numero" id="resolvidos">0</div>
+                <div class="stat-rotulo">Resolvidos</div>
             </div>
         </div>
 
-        <input type="text" id="pesquisa" placeholder="🔍 Pesquisar chamado por nome, turma ou tipo...">
-
-        <div class="tab-bar" id="tabBar">
+        <div class="tab-bar">
             <button class="tab active" onclick="filtrarPorTipo('Todos', this)">Todos</button>
             <button class="tab" onclick="filtrarPorTipo('Máquina', this)">Máquina</button>
             <button class="tab" onclick="filtrarPorTipo('Internet', this)">Internet</button>
@@ -77,6 +74,8 @@
             <button class="tab" onclick="filtrarPorTipo('Laboratório', this)">Laboratório</button>
             <button class="tab" onclick="filtrarPorTipo('Outro', this)">Outro</button>
         </div>
+
+        <input type="text" id="pesquisa" placeholder="🔍 Pesquisar chamado por nome, turma ou tipo...">
 
         <div id="listaChamados"></div>
 
