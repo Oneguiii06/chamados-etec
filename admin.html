@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang=""pt-BR"">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=""UTF-8"">
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
     <title>Área do Admin — Central de Chamados</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel=""stylesheet"" href=""admin.css"">
 </head>
 
 <body>
 
-    <div class="barra-voltar">
-        <a href="paginainicial.html">← Voltar ao Início</a>
+    <div class=""barra-voltar"">
+        <a href=""paginainicial.html"">← Voltar ao Início</a>
     </div>
 
     <!-- LOGIN -->
 
-    <div id="loginAdmin" class="container">
+    <div id=""loginAdmin"" class=""container"">
 
         <h1>Área Administrativa</h1>
 
         <main>
-            <input type="text"     id="usuario" placeholder="Usuário">
-            <input type="password" id="senha"   placeholder="Senha">
+            <input type=""text""     id=""usuario"" placeholder=""Usuário"">
+            <input type=""password"" id=""senha""   placeholder=""Senha"">
 
-            <button onclick="fazerLogin()">Entrar</button>
+            <button onclick=""fazerLogin()"">Entrar</button>
 
-            <p id="erroLogin"></p>
+            <p id=""erroLogin""></p>
         </main>
 
-        <div class="marquee-container">
-            <div class="marquee-content">
-                🔔 Central de Chamados ETEC &nbsp;&nbsp;&nbsp; Registre suas solicitações de forma fácil e prática &nbsp;&nbsp;&nbsp; 🔔 Central de Chamados ETEC
+        <div class=""marquee-container"">
+            <div class=""marquee-content"">
+                🔔 Central de Chamados ETEC &#160;&#160;&#160; Registre suas solicitações de forma fácil e prática &#160;&#160;&#160; 🔔 Central de Chamados ETEC
             </div>
         </div>
 
@@ -39,36 +39,46 @@
 
     <!-- PAINEL -->
 
-    <div id="painelAdmin" class="container" style="display:none;">
+    <div id=""painelAdmin"" class=""container"" style=""display:none;"">
 
         <h1>Painel Administrativo</h1>
 
-        <button onclick="logout()">Sair</button>
+        <button onclick=""logout()"">Sair</button>
 
         <hr>
 
-        <div class="dashboard">
-            <div class="card">
+        <div class=""dashboard"">
+            <div class=""card"">
                 <h3>Total</h3>
-                <p id="totalChamados">0</p>
+                <p id=""totalChamados"">0</p>
             </div>
-            <div class="card aberto">
+            <div class=""card aberto"">
                 <h3>Abertos</h3>
-                <p id="abertos">0</p>
+                <p id=""abertos"">0</p>
             </div>
-            <div class="card andamento">
+            <div class=""card andamento"">
                 <h3>Em andamento</h3>
-                <p id="andamento">0</p>
+                <p id=""andamento"">0</p>
             </div>
-            <div class="card resolvido">
+            <div class=""card resolvido"">
                 <h3>Resolvidos</h3>
-                <p id="resolvidos">0</p>
+                <p id=""resolvidos"">0</p>
             </div>
         </div>
 
-        <input type="text" id="pesquisa" placeholder="🔍 Pesquisar chamado por nome, turma ou tipo...">
+        <input type=""text"" id=""pesquisa"" placeholder=""🔍 Pesquisar chamado por nome, turma ou tipo..."">
 
-        <div id="listaChamados"></div>
+        <div class=""tab-bar"" id=""tabBar"">
+            <button class=""tab active"" onclick=""filtrarPorTipo('Todos', this)"">Todos</button>
+            <button class=""tab"" onclick=""filtrarPorTipo('Máquina', this)"">Máquina</button>
+            <button class=""tab"" onclick=""filtrarPorTipo('Internet', this)"">Internet</button>
+            <button class=""tab"" onclick=""filtrarPorTipo('Limpeza', this)"">Limpeza</button>
+            <button class=""tab"" onclick=""filtrarPorTipo('Reclamações', this)"">Reclamações</button>
+            <button class=""tab"" onclick=""filtrarPorTipo('Laboratório', this)"">Laboratório</button>
+            <button class=""tab"" onclick=""filtrarPorTipo('Outro', this)"">Outro</button>
+        </div>
+
+        <div id=""listaChamados""></div>
 
     </div>
 
@@ -76,7 +86,7 @@
         <p>ETEC — Central de Chamados © 2026</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src=""script.js""></script>
 
 </body>
 
