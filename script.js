@@ -144,11 +144,13 @@ async function carregarChamados() {
     let andamento = 0;
     let resolvidos = 0;
 
-    chamadosFiltrados.forEach(chamado => {
+    chamados.forEach(chamado => {
       if (chamado.status === "Aberto")       abertos++;
       if (chamado.status === "Em andamento") andamento++;
       if (chamado.status === "Resolvido")    resolvidos++;
+    });
 
+    chamadosFiltrados.forEach(chamado => {
       let classeStatus = "";
       if (chamado.status === "Aberto")       classeStatus = "status-aberto";
       if (chamado.status === "Em andamento") classeStatus = "status-andamento";
@@ -184,7 +186,7 @@ async function carregarChamados() {
       lista.innerHTML = "<p style='text-align:center;color:#888;padding:40px 0;'>Nenhum chamado encontrado com esses filtros.</p>";
     }
 
-    document.getElementById("totalChamados").innerText = chamadosFiltrados.length;
+    document.getElementById("totalChamados").innerText = chamados.length;
     document.getElementById("abertos").innerText       = abertos;
     document.getElementById("andamento").innerText     = andamento;
     document.getElementById("resolvidos").innerText    = resolvidos;
