@@ -160,12 +160,23 @@ hr {
     border-radius: 12px;
     text-align: center;
     color: white;
-    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    user-select: none;
 }
 
 .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card:active {
+    transform: scale(0.96);
+}
+
+.card.active {
+    box-shadow: 0 0 0 3px white, 0 0 0 5px rgba(255,255,255,0.5);
+    transform: translateY(-2px);
 }
 
 .card h3 {
