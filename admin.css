@@ -11,8 +11,6 @@ body {
     padding: 20px;
 }
 
-/* ── Barra de voltar ── */
-
 .barra-voltar {
     max-width: 1100px;
     margin: 0 auto 16px auto;
@@ -34,8 +32,6 @@ body {
     text-decoration: underline;
 }
 
-/* ── Container ── */
-
 .container {
     max-width: 1100px;
     margin: auto;
@@ -54,8 +50,6 @@ h1 {
     padding-bottom: 14px;
     border-bottom: 2px solid #fce8e8;
 }
-
-/* ── Login ── */
 
 #loginAdmin main {
     max-width: 420px;
@@ -109,8 +103,6 @@ h1 {
     font-weight: bold;
 }
 
-/* ── Marquee ── */
-
 .marquee-container {
     margin-top: 28px;
     background: #fce8e8;
@@ -132,8 +124,6 @@ h1 {
     from { transform: translateX(0); }
     to   { transform: translateX(-100%); }
 }
-
-/* ── Painel — botão sair ── */
 
 #painelAdmin > button {
     padding: 10px 22px;
@@ -157,8 +147,6 @@ hr {
     border-top: 2px solid #fce8e8;
     margin: 20px 0;
 }
-
-/* ── Dashboard ── */
 
 .dashboard {
     display: grid;
@@ -198,8 +186,6 @@ hr {
 .card.andamento   { background: #d49100; }
 .card.resolvido   { background: #007dd1; }
 
-/* ── Abas de tipo ── */
-
 .tab-bar {
     display: flex;
     gap: 6px;
@@ -230,8 +216,6 @@ hr {
     color: white;
 }
 
-/* ── Pesquisa ── */
-
 #pesquisa {
     width: 100%;
     padding: 12px 16px;
@@ -250,8 +234,6 @@ hr {
     box-shadow: 0 0 0 3px rgba(102,2,0,0.1);
     background: white;
 }
-
-/* ── Chamados ── */
 
 .chamado {
     background: #fafafa;
@@ -285,8 +267,6 @@ hr {
     line-height: 1.6;
 }
 
-/* ── Badge de status ── */
-
 .status {
     display: inline-block;
     padding: 4px 14px;
@@ -299,8 +279,6 @@ hr {
 .status-aberto    { background: #fdecea; color: #9e0000; }
 .status-andamento { background: #fef5e4; color: #d49100; }
 .status-resolvido { background: #e3f5ff; color: #007dd1; }
-
-/* ── Select de status ── */
 
 select {
     padding: 8px 12px;
@@ -318,8 +296,6 @@ select:focus {
     outline: none;
     border-color: #660200;
 }
-
-/* ── Botão excluir ── */
 
 .excluir {
     padding: 9px 18px;
@@ -339,8 +315,6 @@ select:focus {
     transform: translateY(-2px);
 }
 
-/* ── Footer ── */
-
 footer {
     background: #660200;
     color: white;
@@ -351,14 +325,10 @@ footer {
     border-radius: 0 0 12px 12px;
 }
 
-/* ── Animação ── */
-
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
 }
-
-/* ── Responsivo ── */
 
 @media (max-width: 700px) {
     .container { padding: 20px; }
