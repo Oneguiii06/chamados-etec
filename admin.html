@@ -48,19 +48,19 @@
         <hr>
 
         <div class="dashboard">
-            <div class="card">
+            <div class="card active" onclick="filtrarPorStatus('Todos', this)">
                 <h3>Total</h3>
                 <p id="totalChamados">0</p>
             </div>
-            <div class="card aberto">
+            <div class="card aberto" onclick="filtrarPorStatus('Aberto', this)">
                 <h3>Abertos</h3>
                 <p id="abertos">0</p>
             </div>
-            <div class="card andamento">
+            <div class="card andamento" onclick="filtrarPorStatus('Em andamento', this)">
                 <h3>Em andamento</h3>
                 <p id="andamento">0</p>
             </div>
-            <div class="card resolvido">
+            <div class="card resolvido" onclick="filtrarPorStatus('Resolvido', this)">
                 <h3>Resolvidos</h3>
                 <p id="resolvidos">0</p>
             </div>
