@@ -1,5 +1,5 @@
 // =========================
-// CONFIGURAÇÃO DA API
+// CONFIGURACAO DA API
 // =========================
 
 const API = "https://chamados-etec-production.up.railway.app/api";
@@ -82,7 +82,20 @@ if (formChamado) {
 }
 
 // =========================
-// ADMIN JÁ LOGADO?
+// FILTRO POR TIPO
+// =========================
+
+let tipoAtivo = "Todos";
+
+function filtrarPorTipo(tipo, el) {
+  tipoAtivo = tipo;
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  el.classList.add("active");
+  carregarChamados();
+}
+
+// =========================
+// ADMIN JA LOGADO?
 // =========================
 
 if (window.location.pathname.includes("admin.html")) {
@@ -109,11 +122,15 @@ async function carregarChamados() {
 
     lista.innerHTML = "";
 
+    const chamadosFiltrados = tipoAtivo === "Todos"
+      ? chamados
+      : chamados.filter(c => c.tipo === tipoAtivo);
+
     let abertos   = 0;
     let andamento = 0;
     let resolvidos = 0;
 
-    chamados.forEach(chamado => {
+    chamadosFiltrados.forEach(chamado => {
       if (chamado.status === "Aberto")       abertos++;
       if (chamado.status === "Em andamento") andamento++;
       if (chamado.status === "Resolvido")    resolvidos++;
@@ -124,7 +141,7 @@ async function carregarChamados() {
       if (chamado.status === "Resolvido")    classeStatus = "status-resolvido";
 
       lista.innerHTML += `
-        <div class="chamado">
+        <div class="chamado ${classeStatus}">
           <h3>📌 Chamado #${chamado.id}</h3>
           <p><strong>Aluno:</strong> ${chamado.nome}</p>
           <p><strong>Turma:</strong> ${chamado.turma}</p>
@@ -149,7 +166,7 @@ async function carregarChamados() {
       `;
     });
 
-    document.getElementById("totalChamados").innerText = chamados.length;
+    document.getElementById("totalChamados").innerText = chamadosFiltrados.length;
     document.getElementById("abertos").innerText       = abertos;
     document.getElementById("andamento").innerText     = andamento;
     document.getElementById("resolvidos").innerText    = resolvidos;
