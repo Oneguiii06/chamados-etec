@@ -97,7 +97,7 @@ function filtrarPorTipo(tipo, el) {
 
 function filtrarPorStatus(status, el) {
   statusAtivo = status;
-  document.querySelectorAll(".card").forEach(c => c.classList.remove("active"));
+  document.querySelectorAll(".stat-item").forEach(c => c.classList.remove("active"));
   el.classList.add("active");
   carregarChamados();
 }
@@ -136,6 +136,8 @@ async function carregarChamados() {
       chamadosFiltrados = chamadosFiltrados.filter(c => c.tipo === tipoAtivo);
     }
 
+    let chamadosStats = chamadosFiltrados;
+
     if (statusAtivo !== "Todos") {
       chamadosFiltrados = chamadosFiltrados.filter(c => c.status === statusAtivo);
     }
@@ -144,7 +146,7 @@ async function carregarChamados() {
     let andamento = 0;
     let resolvidos = 0;
 
-    chamados.forEach(chamado => {
+    chamadosStats.forEach(chamado => {
       if (chamado.status === "Aberto")       abertos++;
       if (chamado.status === "Em andamento") andamento++;
       if (chamado.status === "Resolvido")    resolvidos++;
@@ -158,26 +160,23 @@ async function carregarChamados() {
 
       lista.innerHTML += `
         <div class="chamado ${classeStatus}">
-          <h3>📌 Chamado #${chamado.id}</h3>
-          <p><strong>Aluno:</strong> ${chamado.nome}</p>
-          <p><strong>Turma:</strong> ${chamado.turma}</p>
-          <p><strong>Tipo:</strong> ${chamado.tipo}</p>
-          <p><strong>Descrição:</strong></p>
-          <p>${chamado.descricao}</p>
-          <p><strong>Data:</strong> ${chamado.data}</p>
-          <p class="status ${classeStatus}">${chamado.status}</p>
-
-          <select onchange="alterarStatus(${chamado.id}, this.value)">
-            <option ${chamado.status === "Aberto"       ? "selected" : ""}>Aberto</option>
-            <option ${chamado.status === "Em andamento" ? "selected" : ""}>Em andamento</option>
-            <option ${chamado.status === "Resolvido"    ? "selected" : ""}>Resolvido</option>
-          </select>
-
-          <br><br>
-
-          <button class="excluir" onclick="excluirChamado(${chamado.id})">
-            Excluir Chamado
-          </button>
+          <h3>Chamado #${chamado.id}</h3>
+          <div class="chamado-info">
+            <span><strong>Aluno:</strong> ${chamado.nome}</span>
+            <span><strong>Turma:</strong> ${chamado.turma || "—"}</span>
+            <span><strong>Tipo:</strong> ${chamado.tipo}</span>
+            <span><strong>Data:</strong> ${chamado.data}</span>
+          </div>
+          <div class="chamado-desc">${chamado.descricao}</div>
+          <div class="chamado-acoes">
+            <span class="status-badge ${classeStatus}">${chamado.status}</span>
+            <select class="select-status" onchange="alterarStatus(${chamado.id}, this.value)">
+              <option ${chamado.status === "Aberto"       ? "selected" : ""}>Aberto</option>
+              <option ${chamado.status === "Em andamento" ? "selected" : ""}>Em andamento</option>
+              <option ${chamado.status === "Resolvido"    ? "selected" : ""}>Resolvido</option>
+            </select>
+            <button class="btn-excluir" onclick="excluirChamado(${chamado.id})">Excluir</button>
+          </div>
         </div>
       `;
     });
@@ -186,7 +185,7 @@ async function carregarChamados() {
       lista.innerHTML = "<p style='text-align:center;color:#888;padding:40px 0;'>Nenhum chamado encontrado com esses filtros.</p>";
     }
 
-    document.getElementById("totalChamados").innerText = chamados.length;
+    document.getElementById("totalChamados").innerText = chamadosStats.length;
     document.getElementById("abertos").innerText       = abertos;
     document.getElementById("andamento").innerText     = andamento;
     document.getElementById("resolvidos").innerText    = resolvidos;
