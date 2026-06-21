@@ -1,158 +1,330 @@
- *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-body{
-    background:#660200;
-    min-height:100vh;
-    padding:20px;
+body {
+    background: #660200;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-.marquee-container  {
-overflow: 10;
-white-space: nowrap;
-color: white;
+/* ── Barra de voltar ── */
+
+.barra-voltar {
+    max-width: 1100px;
+    margin: 0 auto 16px auto;
+}
+
+.barra-voltar a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.barra-voltar a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* ── Container ── */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    animation: fadeInUp 0.5s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #660200;
+    font-size: 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #fce8e8;
+}
+
+/* ── Login ── */
+
+#loginAdmin main {
+    max-width: 420px;
+    margin: auto;
+}
+
+#loginAdmin input {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    background: #fafafa;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+#loginAdmin input:focus {
+    outline: none;
+    border-color: #660200;
+    box-shadow: 0 0 0 3px rgba(102,2,0,0.1);
+    background: white;
+}
+
+#loginAdmin button {
+    width: 100%;
+    padding: 13px;
+    background: #660200;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+#loginAdmin button:hover {
+    background: #a30600;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(102,2,0,0.3);
+}
+
+#erroLogin {
+    color: #c0392b;
+    margin-top: 12px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ── Marquee ── */
+
+.marquee-container {
+    margin-top: 28px;
+    background: #fce8e8;
+    border-radius: 8px;
+    padding: 10px 0;
+    overflow: hidden;
 }
 
 .marquee-content {
-  display: inline-block;
-  animation: marquee 7s linear infinite;
+    white-space: nowrap;
+    display: inline-block;
+    animation: marquee 12s linear infinite;
+    color: #660200;
+    font-size: 14px;
+    padding-left: 100%;
 }
 
 @keyframes marquee {
-  from {transform: translateX(-500%);}
-  to {transform: translateX(500%);}
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100%); }
 }
 
-.container{
-    max-width:1100px;
-    margin:auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 0 15px rgba(0,0,0,0.1);
+/* ── Painel — botão sair ── */
+
+#painelAdmin > button {
+    padding: 10px 22px;
+    background: #660200;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 20px;
 }
 
-h1{
-    text-align:center;
-    margin-bottom:20px;
-    color:#a30600;
+#painelAdmin > button:hover {
+    background: #a30600;
 }
 
-input,
-select{
-    width:95%;
-    padding:8px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    margin-bottom:10px;
+hr {
+    border: none;
+    border-top: 2px solid #fce8e8;
+    margin: 20px 0;
 }
 
-button{
-    background:#660200;
-    color:white;
-    border:none;
-    padding:12px;
-    border-radius:8px;
-    cursor:pointer;
+/* ── Dashboard ── */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
 }
 
-button:hover{
-    background:#a30600;
+.card {
+    padding: 22px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-
-
-.dashboard{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:15px;
-    margin-bottom:20px;
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.card{
-    color:white;
-    padding:20px;
-    border-radius:12px;
-    text-align:center;
+.card h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    opacity: 0.9;
 }
 
-.card p{
-    font-size:28px;
-    font-weight:bold;
+.card p {
+    font-size: 38px;
+    font-weight: bold;
 }
 
-.card:first-child{
-    background:#e50c00;
+.card:first-child { background: #e50c00; }
+.card.aberto      { background: #9e0000; }
+.card.andamento   { background: #d49100; }
+.card.resolvido   { background: #007dd1; }
+
+/* ── Pesquisa ── */
+
+#pesquisa {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    margin-bottom: 24px;
+    background: #fafafa;
+    transition: border-color 0.25s, box-shadow 0.25s;
 }
 
-.aberto{
-    background:#9e0000;
+#pesquisa:focus {
+    outline: none;
+    border-color: #660200;
+    box-shadow: 0 0 0 3px rgba(102,2,0,0.1);
+    background: white;
 }
 
-.andamento{
-    background:#d49100;
+/* ── Chamados ── */
+
+.chamado {
+    background: #fafafa;
+    border-left: 6px solid #660200;
+    border-radius: 10px;
+    padding: 22px;
+    margin-top: 16px;
+    transition: box-shadow 0.2s, transform 0.2s;
+    animation: fadeInUp 0.4s ease;
 }
 
-.resolvido{
-    background:#007dd1;
+.chamado:hover {
+    box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+    transform: translateX(3px);
 }
 
-.chamado{
-    background:#f8f9fa;
-    border-left:6px solid #660200;
-    padding:15px;
-    margin-top:15px;
-    border-radius:8px;
+.chamado h3 {
+    color: #660200;
+    margin-bottom: 12px;
+    font-size: 17px;
 }
 
-.chamado h3{
-    color:#800000;
+.chamado p {
+    margin: 6px 0;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
-.chamado p{
-    margin:6px 0;
+/* ── Badge de status ── */
+
+.status {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 8px 0;
 }
 
-.status{
-    font-weight:bold;
+.status-aberto    { background: #fdecea; color: #9e0000; }
+.status-andamento { background: #fef5e4; color: #d49100; }
+.status-resolvido { background: #e3f5ff; color: #007dd1; }
+
+/* ── Select de status ── */
+
+select {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    background: white;
+    margin-top: 8px;
+    transition: border-color 0.2s;
 }
 
-.status-aberto{
-    color:#9e0000;
+select:focus {
+    outline: none;
+    border-color: #660200;
 }
 
-.status-andamento{
-    color:#d49100;
+/* ── Botão excluir ── */
+
+.excluir {
+    padding: 9px 18px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s, transform 0.15s;
 }
 
-.status-resolvido{
-    color:#007dd1;
+.excluir:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
 }
 
-.excluir{
-    background:#e74c3c;
-    margin-top:10px;
+/* ── Footer ── */
+
+footer {
+    background: #660200;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 14px;
+    border-radius: 0 0 12px 12px;
 }
 
-.excluir:hover{
-    background:#e50c00;
+/* ── Animação ── */
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-#erroLogin{
-    color:red;
-    text-align:center;
-    margin-top:10px;
-    font-weight:bold;
-}
+/* ── Responsivo ── */
 
-@media(max-width:700px){
-
-    .container{
-        padding:15px;
-    }
-
+@media (max-width: 700px) {
+    .container { padding: 20px; }
+    .dashboard { grid-template-columns: repeat(2, 1fr); }
 }
