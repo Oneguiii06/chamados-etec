@@ -1,0 +1,134 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+     font-family: 'Times New Roman', Times, serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+/* Cabeçalho */
+
+header{
+    background-color: #660200 ;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    width:60px;
+}
+
+#menu-btn{
+    font-size:30px;
+    color:white;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+/* Menu */
+
+#menu{
+    position:fixed;
+    top:0;
+    left:-250px;
+    width:250px;
+    height:100%;
+    background:#660200;
+    padding-top:70px;
+    transition:0.3s;
+}
+
+#menu.ativo{
+    left:0;
+}
+
+#menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:15px;
+}
+
+#menu a:hover{
+    background:#a30600;
+}
+
+/* Banner */
+
+.banner{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.banner h1{
+    color:#660200;
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.banner p{
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+}
+
+
+/* Sobre */
+
+.sobre{
+    background:white;
+    margin:10px;
+    padding:30px;
+    border-radius:10px;
+}
+
+.sobre h2{
+    margin-bottom:20px;
+    color:#660200;
+}
+
+/* Cards */
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:40px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    width:280px;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#660200;
+}
+
+/* Rodapé */
+
+footer{
+    background:#660200;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de chamados do aluno/usuário</title>
+
+    <link rel="stylesheet" href="aluno.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1> Abrir Chamado</h1>
+
+        <form id="formChamado">
+
+            <label>Nome</label>
+            <input
+                type="text"
+                id="nome"
+                required>
+
+            <label>Função ou turma</label>
+            <input
+                type="text"
+                id="turma"
+                optional>
+
+            <label>Tipo do Problema</label>
+
+            <select id="tipo">
+
+                <option>Máquina</option>
+
+                <option>Internet</option>
+
+                <option>Limpeza</option>
+
+                <option>Reclamações</option>
+
+                <option>Laboratório</option>
+
+                <option>Outro</option>
+
+            </select>
+
+            <label>Descrição</label>
+
+            <textarea
+                id="descricao"
+                rows="6"
+                required></textarea>
+
+            <button type="submit">
+                Abrir Chamado
+            </button>
+
+        </form>
+
+        <div id="mensagemSucesso"></div>
+
+        <br>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

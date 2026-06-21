@@ -1,0 +1,158 @@
+ *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#660200;
+    min-height:100vh;
+    padding:20px;
+}
+
+.marquee-container  {
+overflow: 10;
+white-space: nowrap;
+color: white;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 7s linear infinite;
+}
+
+@keyframes marquee {
+  from {transform: translateX(-500%);}
+  to {transform: translateX(500%);}
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#a30600;
+}
+
+input,
+select{
+    width:95%;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    margin-bottom:10px;
+}
+
+button{
+    background:#660200;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#a30600;
+}
+
+
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.card{
+    color:white;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.card p{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.card:first-child{
+    background:#e50c00;
+}
+
+.aberto{
+    background:#9e0000;
+}
+
+.andamento{
+    background:#d49100;
+}
+
+.resolvido{
+    background:#007dd1;
+}
+
+.chamado{
+    background:#f8f9fa;
+    border-left:6px solid #660200;
+    padding:15px;
+    margin-top:15px;
+    border-radius:8px;
+}
+
+.chamado h3{
+    color:#800000;
+}
+
+.chamado p{
+    margin:6px 0;
+}
+
+.status{
+    font-weight:bold;
+}
+
+.status-aberto{
+    color:#9e0000;
+}
+
+.status-andamento{
+    color:#d49100;
+}
+
+.status-resolvido{
+    color:#007dd1;
+}
+
+.excluir{
+    background:#e74c3c;
+    margin-top:10px;
+}
+
+.excluir:hover{
+    background:#e50c00;
+}
+
+#erroLogin{
+    color:red;
+    text-align:center;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+@media(max-width:700px){
+
+    .container{
+        padding:15px;
+    }
+
+}

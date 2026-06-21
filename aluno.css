@@ -1,0 +1,83 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+     font-family: 'Times New Roman', Times, serif;
+}
+
+body{
+    background:#660200;
+    min-height:100vh;
+    padding:20px;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#a30600;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+label{
+    color: #660200;
+}
+
+option{
+    color: #a30600;
+}
+
+select{
+    color: #a30600;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    margin-bottom:10px;
+}
+
+textarea{
+    resize:none;
+}
+
+button{
+    width:100%;
+    background:#660200;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#a30600;
+}
+
+
+#mensagemSucesso{
+    margin-top:20px;
+    text-align:center;
+    font-size:18px;
+    color:#a30600;
+    font-weight:bold;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do admin/técnico</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+
+    <div id="loginAdmin" class="container">
+
+        <main>
+
+        <h1> Área Administrativa</h1>
+
+        <input
+            type="text"
+            id="usuario"
+            placeholder="Usuário">
+
+        <input
+            type="password"
+            id="senha"
+            placeholder="Senha">
+
+        <button onclick="fazerLogin()">
+            Entrar
+        </button>
+
+        <p id="erroLogin"></p>
+
+        <br>
+    </main>
+
+         <div class="marquee-container">
+            <div class="marquee-content">
+                Marquee example here
+            </div>
+        </div>
+      
+
+    </div>
+
+    <!-- PAINEL -->
+
+    <div
+        id="painelAdmin"
+        class="container"
+        style="display:none;">
+
+        <h1> Painel Administrativo</h1>
+
+        <button onclick="logout()">
+            Sair
+        </button>
+
+        <hr>
+
+        <div class="dashboard">
+
+            <div class="card">
+                <h3>Total</h3>
+                <p id="totalChamados">0</p>
+            </div>
+
+            <div class="card aberto">
+                <h3>Abertos</h3>
+                <p id="abertos">0</p>
+            </div>
+
+            <div class="card andamento">
+                <h3>Em andamento</h3>
+                <p id="andamento">0</p>
+            </div>
+
+            <div class="card resolvido">
+                <h3>Resolvidos</h3>
+                <p id="resolvidos">0</p>
+            </div>
+
+        </div>
+
+        <input
+            type="text"
+            id="pesquisa"
+            placeholder="Pesquisar chamado">
+
+        <div id="listaChamados"></div>
+
+    </div>
+
+     <footer>
+            <p> </p>
+        </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
