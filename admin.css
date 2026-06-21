@@ -198,6 +198,38 @@ hr {
 .card.andamento   { background: #d49100; }
 .card.resolvido   { background: #007dd1; }
 
+/* ── Abas de tipo ── */
+
+.tab-bar {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 8px 20px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.tab:hover {
+    border-color: #660200;
+    color: #660200;
+}
+
+.tab.active {
+    background: #660200;
+    border-color: #660200;
+    color: white;
+}
+
 /* ── Pesquisa ── */
 
 #pesquisa {
@@ -227,9 +259,13 @@ hr {
     border-radius: 10px;
     padding: 22px;
     margin-top: 16px;
-    transition: box-shadow 0.2s, transform 0.2s;
+    transition: box-shadow 0.2s, transform 0.2s, border-left-color 0.2s;
     animation: fadeInUp 0.4s ease;
 }
+
+.chamado.status-aberto    { border-left-color: #9e0000; }
+.chamado.status-andamento { border-left-color: #d49100; }
+.chamado.status-resolvido { border-left-color: #007dd1; }
 
 .chamado:hover {
     box-shadow: 0 4px 18px rgba(0,0,0,0.09);
