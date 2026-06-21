@@ -4,104 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área do admin/técnico</title>
-
+    <title>Área do Admin — Central de Chamados</title>
     <link rel="stylesheet" href="admin.css">
 </head>
 
 <body>
 
-    <div style="padding: 10px 20px; background:#660200;">
-        <a href="paginainicial.html" style="color:white; text-decoration:none; font-size:16px;">← Voltar ao Início</a>
+    <div class="barra-voltar">
+        <a href="paginainicial.html">← Voltar ao Início</a>
     </div>
 
     <!-- LOGIN -->
 
     <div id="loginAdmin" class="container">
 
+        <h1>Área Administrativa</h1>
+
         <main>
+            <input type="text"     id="usuario" placeholder="Usuário">
+            <input type="password" id="senha"   placeholder="Senha">
 
-        <h1> Área Administrativa</h1>
+            <button onclick="fazerLogin()">Entrar</button>
 
-        <input
-            type="text"
-            id="usuario"
-            placeholder="Usuário">
+            <p id="erroLogin"></p>
+        </main>
 
-        <input
-            type="password"
-            id="senha"
-            placeholder="Senha">
-
-        <button onclick="fazerLogin()">
-            Entrar
-        </button>
-
-        <p id="erroLogin"></p>
-
-        <br>
-    </main>
-
-         <div class="marquee-container">
+        <div class="marquee-container">
             <div class="marquee-content">
-                Marquee example here
+                🔔 Central de Chamados ETEC &nbsp;&nbsp;&nbsp; Registre suas solicitações de forma fácil e prática &nbsp;&nbsp;&nbsp; 🔔 Central de Chamados ETEC
             </div>
         </div>
-      
 
     </div>
 
     <!-- PAINEL -->
 
-    <div
-        id="painelAdmin"
-        class="container"
-        style="display:none;">
+    <div id="painelAdmin" class="container" style="display:none;">
 
-        <h1> Painel Administrativo</h1>
+        <h1>Painel Administrativo</h1>
 
-        <button onclick="logout()">
-            Sair
-        </button>
+        <button onclick="logout()">Sair</button>
 
         <hr>
 
         <div class="dashboard">
-
             <div class="card">
                 <h3>Total</h3>
                 <p id="totalChamados">0</p>
             </div>
-
             <div class="card aberto">
                 <h3>Abertos</h3>
                 <p id="abertos">0</p>
             </div>
-
             <div class="card andamento">
                 <h3>Em andamento</h3>
                 <p id="andamento">0</p>
             </div>
-
             <div class="card resolvido">
                 <h3>Resolvidos</h3>
                 <p id="resolvidos">0</p>
             </div>
-
         </div>
 
-        <input
-            type="text"
-            id="pesquisa"
-            placeholder="Pesquisar chamado">
+        <input type="text" id="pesquisa" placeholder="🔍 Pesquisar chamado por nome, turma ou tipo...">
 
         <div id="listaChamados"></div>
 
     </div>
 
-     <footer>
-            <p> </p>
-        </footer>
+    <footer>
+        <p>ETEC — Central de Chamados © 2026</p>
+    </footer>
 
     <script src="script.js"></script>
 
