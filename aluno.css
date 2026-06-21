@@ -1,83 +1,156 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-     font-family: 'Times New Roman', Times, serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-body{
-    background:#660200;
-    min-height:100vh;
-    padding:20px;
+body {
+    background: #660200;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-.container{
-    max-width:700px;
-    margin:auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 0 15px rgba(0,0,0,0.1);
+/* ── Barra de voltar ── */
+
+.barra-voltar {
+    max-width: 700px;
+    margin: 0 auto 16px auto;
 }
 
-h1{
-    text-align:center;
-    margin-bottom:20px;
-    color:#a30600;
+.barra-voltar a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.9;
+    transition: opacity 0.2s;
 }
 
-label{
-    display:block;
-    margin-top:10px;
-    margin-bottom:5px;
-    font-weight:bold;
+.barra-voltar a:hover {
+    opacity: 1;
+    text-decoration: underline;
 }
 
-label{
+/* ── Container ── */
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    animation: fadeInUp 0.5s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 28px;
+    color: #660200;
+    font-size: 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #fce8e8;
+}
+
+/* ── Formulário ── */
+
+label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #660200;
+    font-size: 15px;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #333;
+    background: #fafafa;
+    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #660200;
+    box-shadow: 0 0 0 3px rgba(102,2,0,0.1);
+    background: white;
+}
+
+select {
+    color: #660200;
+    cursor: pointer;
+}
+
+option {
     color: #660200;
 }
 
-option{
-    color: #a30600;
+textarea {
+    resize: vertical;
+    min-height: 130px;
 }
 
-select{
-    color: #a30600;
+/* ── Botão ── */
+
+button[type="submit"] {
+    width: 100%;
+    margin-top: 26px;
+    padding: 14px;
+    background: #660200;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-family: inherit;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
 }
 
-input,
-textarea,
-select{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    margin-bottom:10px;
+button[type="submit"]:hover {
+    background: #a30600;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(102,2,0,0.3);
 }
 
-textarea{
-    resize:none;
+button[type="submit"]:active {
+    transform: translateY(0);
 }
 
-button{
-    width:100%;
-    background:#660200;
-    color:white;
-    border:none;
-    padding:12px;
-    border-radius:8px;
-    cursor:pointer;
+/* ── Mensagem de sucesso ── */
+
+#mensagemSucesso {
+    margin-top: 24px;
+    padding: 20px;
+    background: #eafaf1;
+    border: 2px solid #2ecc71;
+    border-radius: 10px;
+    color: #1a7a40;
+    font-size: 16px;
+    text-align: center;
+    animation: fadeInUp 0.4s ease;
 }
 
-button:hover{
-    background:#a30600;
+#mensagemSucesso:empty {
+    display: none;
 }
 
+/* ── Animação ── */
 
-#mensagemSucesso{
-    margin-top:20px;
-    text-align:center;
-    font-size:18px;
-    color:#a30600;
-    font-weight:bold;
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
