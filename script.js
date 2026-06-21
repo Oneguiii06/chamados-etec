@@ -2,7 +2,7 @@
 // CONFIGURAÇÃO DA API
 // =========================
 
-const API = "http://localhost:3000/api";
+const API = "https://chamados-etec-production.up.railway.app/api";
 
 // =========================
 // LOGIN ADMINISTRADOR
