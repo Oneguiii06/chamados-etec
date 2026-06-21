@@ -36,6 +36,8 @@ header{
     background:none;
     border:none;
     cursor:pointer;
+    position:relative;
+    z-index:1000;
 }
 
 /* Menu */
@@ -49,8 +51,8 @@ header{
     background:#660200;
     padding-top:70px;
     transition:0.3s;
+    z-index:999;
 }
-
 #menu.ativo{
     right:0;
 }
