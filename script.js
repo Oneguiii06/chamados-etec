@@ -82,14 +82,22 @@ if (formChamado) {
 }
 
 // =========================
-// FILTRO POR TIPO
+// FILTROS
 // =========================
 
-let tipoAtivo = "Todos";
+let tipoAtivo   = "Todos";
+let statusAtivo = "Todos";
 
 function filtrarPorTipo(tipo, el) {
   tipoAtivo = tipo;
   document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  el.classList.add("active");
+  carregarChamados();
+}
+
+function filtrarPorStatus(status, el) {
+  statusAtivo = status;
+  document.querySelectorAll(".card").forEach(c => c.classList.remove("active"));
   el.classList.add("active");
   carregarChamados();
 }
@@ -122,9 +130,15 @@ async function carregarChamados() {
 
     lista.innerHTML = "";
 
-    const chamadosFiltrados = tipoAtivo === "Todos"
-      ? chamados
-      : chamados.filter(c => c.tipo === tipoAtivo);
+    let chamadosFiltrados = chamados;
+
+    if (tipoAtivo !== "Todos") {
+      chamadosFiltrados = chamadosFiltrados.filter(c => c.tipo === tipoAtivo);
+    }
+
+    if (statusAtivo !== "Todos") {
+      chamadosFiltrados = chamadosFiltrados.filter(c => c.status === statusAtivo);
+    }
 
     let abertos   = 0;
     let andamento = 0;
@@ -165,6 +179,10 @@ async function carregarChamados() {
         </div>
       `;
     });
+
+    if (chamadosFiltrados.length === 0) {
+      lista.innerHTML = "<p style='text-align:center;color:#888;padding:40px 0;'>Nenhum chamado encontrado com esses filtros.</p>";
+    }
 
     document.getElementById("totalChamados").innerText = chamadosFiltrados.length;
     document.getElementById("abertos").innerText       = abertos;
